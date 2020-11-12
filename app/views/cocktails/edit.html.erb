@@ -3,6 +3,9 @@
     <%= f.input :name, label: false %>
     <%= f.submit 'next step' %>
   </div>
+  <% @cocktail.doses.each do |dose| %>
+    <p><%= dose.ingredient.name%> || <%= dose.description %></p>
+  <% end %>
     <%= f.fields_for :doses, Dose.new do |dose_attributes|%>
       <%= dose_attributes.input :description %>
       <%= dose_attributes.association :ingredient %>
