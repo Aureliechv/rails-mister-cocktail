@@ -1,0 +1,25 @@
+.cocktail-card {
+  height: 300px;
+  border: solid #c3c3c3 1px;
+  border-radius: 5px;
+  width: 300px;
+  margin: 10px;
+  box-shadow: 4px 4px 9px #ffc0cb59;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: overline underline;
+  .cocktail-card-title {
+    color: white;
+    font-size: 30px;
+    font-family: 'Lobster', cursive;
+  }
+  &:hover {
+    border: solid white 5px;
+    text-decoration: none;
+  }
+}

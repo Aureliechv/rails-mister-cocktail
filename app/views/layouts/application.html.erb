@@ -9,13 +9,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <nav class="navbar navbar-light bg-light">
-      <%= link_to "🍸 Sweet Cocktails 🍸", cocktails_path, class: "navbar-brand" %>
-      <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+      <%= link_to "HH", cocktails_path, class: "navbar-brand", id: 'logo' %>
+      <form action = "/resuls" class="form-inline">
+        <input class="form-control mr-sm-2" name="query" id= "query" type="search" placeholder="Search" aria-label="Search">
+        <button class="grey-btn search-btn" type="search">Search</button>
+        &nbsp;&nbsp;
+        <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn-navbar" %>
+      </form>
     </nav>
     <%= yield %>
   </body>

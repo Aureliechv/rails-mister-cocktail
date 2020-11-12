@@ -1,7 +1,13 @@
-<h1>New dose</h1>
+<h1>New dose for <%= @cocktail.name %></h1>
+
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.ingredient.name%> || <%= dose.description %></p>
+<% end %>
 
 <%= simple_form_for(@dose, url: cocktail_doses_path(@cocktail)) do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient %>
-  <%= f.button :submit %>
+  <%= f.submit 'All done', class: 'btn btn-primary' %>
+  <%= f.submit 'Need more', class: 'btn btn-primary' %>
+  <%= link_to 'Oops, all doses are there', cocktail_path(@cocktail), class: 'btn btn-primary' %>
 <% end %>

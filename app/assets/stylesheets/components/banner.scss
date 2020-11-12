@@ -1,0 +1,34 @@
+.space-banner{
+  height: 60px;
+}
+
+.pink-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #e91e6352;
+  box-shadow: inset 0 0 20px #00000085;
+}
+
+.new-cocktail-banner {
+  height: 300px;
+  form {
+    display: flex;
+    height: 38px;
+  }
+}
+
+#home-banner {
+  height: 450px;
+  h1 {
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 95px;
+  margin-bottom: 25px;
+  }
+  h3 {
+  margin: 0px;
+  font-size: 22px;
+  }
+}

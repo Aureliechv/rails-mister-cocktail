@@ -10,3 +10,27 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  width: 100%;
+}
+
+#logo {
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+}
+
+.btn-navbar {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid #E91E63 1px;
+  color: #E91E63;
+}
+
