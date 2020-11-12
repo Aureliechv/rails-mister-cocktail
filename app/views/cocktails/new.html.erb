@@ -5,7 +5,7 @@
   </div>
     <%= f.fields_for :doses, Dose.new do |dose_attributes|%>
       <%= dose_attributes.input :description %>
-      <%= dose_attributes.association :ingredient %>
+      <%= dose_attributes.association :ingredient, input_html: { class: 'select2' } %>
       <%= f.submit 'All done', class: 'btn btn-primary' %>
       <%= f.submit 'Need more', class: 'btn btn-primary' %>
     <% end %>

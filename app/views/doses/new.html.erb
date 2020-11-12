@@ -8,7 +8,7 @@
 
 <%= simple_form_for(@dose, url: cocktail_doses_path(@cocktail)) do |f| %>
   <%= f.input :description %>
-  <%= f.association :ingredient %>
+  <%= f.association :ingredient, input_html: { class: 'select2' } %>
   <%= f.submit 'All done', class: 'btn btn-primary' %>
   <%= f.submit 'Need more', class: 'btn btn-primary' %>
   <%= link_to 'Oops, all doses are there', cocktail_path(@cocktail), class: 'btn btn-primary' %>
