@@ -1,6 +1,14 @@
-<div class="new-cocktail-banner pink-banner">
-  <%= simple_form_for (@cocktail) do |f| %>
+<div class="navbar-space"></div>
+
+<%= simple_form_for (@cocktail) do |f| %>
+  <div class="new-cocktail-banner pink-banner">
     <%= f.input :name, label: false %>
     <%= f.submit 'next step' %>
-  <% end %>
-</div>
+  </div>
+    <%= f.fields_for :doses, Dose.new do |dose_attributes|%>
+      <%= dose_attributes.input :description %>
+      <%= dose_attributes.association :ingredient %>
+      <%= f.submit 'All done', class: 'btn btn-primary' %>
+      <%= f.submit 'Need more', class: 'btn btn-primary' %>
+    <% end %>
+<% end %>
