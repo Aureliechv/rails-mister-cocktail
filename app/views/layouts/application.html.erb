@@ -18,10 +18,10 @@
     <nav class="navbar navbar-light bg-light navbar sticky-top navbar-expand-lg"">
       <%= link_to "HH", cocktails_path, class: "navbar-brand", id: 'logo' %>
       <form action = "/results" class="form-inline">
-        <input class="form-control mr-sm-2" name="query" id= "query" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control mr-sm-2" name="query" id= "query" type="search" placeholder="Feeling picky? Look for a name or ingredient!" aria-label="Search">
         <button class="grey-btn search-btn" type="search">Search</button>
         &nbsp;&nbsp;
-        <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn-navbar" %>
+        <%= link_to "Add a new cocktail", new_cocktail_path, class: "orange-btn" %>
       </form>
     </nav>
     <%= yield %>

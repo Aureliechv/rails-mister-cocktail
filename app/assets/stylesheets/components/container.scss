@@ -1,0 +1,30 @@
+#home-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+  background: #fff7e6;
+  h2 {
+    font-weight: bold;
+    color: black;
+    font-size: 35px;
+    margin: 30px;
+    letter-spacing: -2px;
+  }
+  form {
+    margin-bottom: 40px;
+  }
+  h3 {
+    font-size: 17px;
+    margin: 7px;
+  }
+}
+
+.strass-container {
+  background-image: url("background-strass.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

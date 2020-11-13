@@ -4,3 +4,19 @@
   right: 16px;
   z-index: 1000;
 }
+
+#home-alert {
+  position: relative;
+  text-align: center;
+  background: white;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 15px;
+  margin: 10px 0px 30px;
+  font-size: 13px;
+  color: #da9106 ;
+  border: solid #da9106  1px;
+  box-shadow: 4px 4px 9px #cab285;
+  position: absolute;
+  top: 300px;
+}

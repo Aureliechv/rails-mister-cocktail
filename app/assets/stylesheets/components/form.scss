@@ -1,0 +1,30 @@
+.form-header {
+  height: 300px;
+  width: 900px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px 5px 0px 0px;
+  form {
+    height: 38px;
+  }
+}
+
+.form-footer {
+  text-align: center;
+  margin: 10px;
+  .form-submit-btn {
+    width: 100%;
+  }
+}
+
+.form-element-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 150px;
+  text-align: center;
+  .select2 {
+    width: 600px;
+  }
+}

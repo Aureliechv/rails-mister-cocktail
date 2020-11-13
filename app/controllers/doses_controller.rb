@@ -9,8 +9,7 @@ class DosesController < ApplicationController
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
     if @dose.save
-      redirect_to cocktail_path(@cocktail) if params[:commit] == 'All done'
-      redirect_to new_cocktail_doses_path(@cocktail) if params[:commit] == 'Need more'
+      redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
