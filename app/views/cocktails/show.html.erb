@@ -1,19 +1,19 @@
 <div class="strass-container">
-  <div class="card-form">
-    <div class="card-info-header orange-banner">
+  <div class="info-card-photo" style="background-image:
+  url('<%= cl_image_path @cocktail.photo.key %>')">
+  </div>
+  <div class="info-card-content">
+    <div class="header">
       <h1><%= @cocktail.name %></h1>
     </div>
-    <div class="info-element-container">
-      <div class="cocktail-photo">
-        <%= cl_image_tag @cocktail.photo.key %>
-      </div>
-      <div class="cocktail-ingredients">
+    <div class="body">
+      <div class="ingredients">
         <h2>Ingredients</h2>
         <% @cocktail.doses.each do |dose| %>
           <p><%= dose.ingredient.name%> || <%= dose.description %></p>
         <% end %>
-        <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
       </div>
+      <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class: 'orange-btn' %>
     </div>
   </div>
 </div>
