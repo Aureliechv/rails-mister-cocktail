@@ -16,7 +16,7 @@
     <% cocktails.each  do |cocktail| %>
       <div class="cocktail-card" style="background-image: linear-gradient(286deg,
       rgba(77,77,77,0.4472163865546218) 100%, rgba(77,77,77,0.4864320728291317) 100%),
-      url('https://source.unsplash.com/z8-JBJDZJtw/3909×5863')">
+       url('<%= cl_image_path cocktail.photo.key %>')">
         <%= link_to cocktail.name, cocktail_path(cocktail), class: 'cocktail-card-title' %>
       </div>
     <% end %>
