@@ -29,3 +29,45 @@
   }
 }
 
+.form-edit-element-container {
+  height: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 10px;
+  text-align: center;
+  width: 500px;
+  text-align: center;
+  .select2 {
+    width: 480px;
+  }
+}
+
+.form-edit-header {
+  height: 150px;
+  width: 500px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px 5px 0px 0px;
+  form {
+    height: 38px;
+  }
+}
+
+.form-edit-footer {
+  text-align: center;
+  margin: 10px;
+  .form-submit-btn {
+    width: 100%;
+  }
+}
+
+.form-edit-ingredient {
+  height: 600px;
+}
+
+#form-photo-submit {
+  text-align: center;
+  margin: auto;
+}
+

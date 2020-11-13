@@ -1,11 +1,13 @@
 <div class="strass-container">
-  <div class="card-form">
+  <div class="info-card-photo" style="background-image:
+  url('<%= cl_image_path @cocktail.photo.key %>')">
+  </div>
+  <div class="info-card-content">
     <%= simple_form_for (@cocktail) do |f| %>
-      <div class="form-header pink-banner" style="background-image:
-       url('<%= cl_image_path @cocktail.photo.key %>')">
-        <%= f.input :name, label: false %>
+      <div class="form-edit-header orange-banner">
+        <h1><%= f.input :name, label: false %></h1>
       </div>
-      <div class="form-element-container">
+      <div class="form-edit-element-container">
         <%= f.input :photo, as: :file %>
         <%= f.fields_for :doses, Dose.new do |dose_attributes|%>
           <%= dose_attributes.input :description %>
@@ -13,9 +15,19 @@
           <%= f.submit 'Add an ingedient', class: 'grey-btn' %>
         <% end %>
       </div>
-      <div class="form-footer">
+      <div class="form-edit-footer">
         <%= f.submit 'All done 🍸' , class: 'orange-btn form-submit-btn' %>
       </div>
     <% end %>
+  </div>
+  <div class="info-card-content form-edit-ingredient">
+    <div class="body">
+      <div class="ingredients">
+        <h2>Ingredients</h2>
+        <% @cocktail.doses.each do |dose| %>
+          <p><%= dose.ingredient.name%> || <%= dose.description %></p>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
