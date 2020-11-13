@@ -25,7 +25,9 @@
       <div class="ingredients">
         <h2>Ingredients</h2>
         <% @cocktail.doses.each do |dose| %>
-          <p><%= dose.ingredient.name%> || <%= dose.description %></p>
+          <span><%= dose.ingredient.name%> - <%= dose.description %>&nbsp;&nbsp;&nbsp;</span>
+          <%= link_to "🗑", cocktail_dose_path(dose, @cocktail.id), method: :delete, data: { confirm: "Are you sure?" } %>
+          <br>
         <% end %>
       </div>
     </div>

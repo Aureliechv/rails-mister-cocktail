@@ -28,10 +28,9 @@ class CocktailsController < ApplicationController
   def update
     @cocktail = Cocktail.find(params[:id])
     if @cocktail.update(cocktail_params)
-      redirect_to cocktail_path(@cocktail) if params[:commit] == 'All done'
-      redirect_to edit_cocktail_path(@cocktail) if params[:commit] == 'Add an ingedient'
+      redirect_to cocktail_path(@cocktail) if params[:commit] == 'All done 🍸'
     else
-      render :new
+      redirect_to edit_cocktail_path(@cocktail)
     end
   end
 

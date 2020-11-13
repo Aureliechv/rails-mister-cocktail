@@ -3,6 +3,11 @@
   background: #d4d4d4;
   color: #565656;
   border-radius: 5px;
+  &:hover {
+    border: solid #FF5722 1px;
+    color: #FF5722;
+    background: #ff572224;
+  }
 }
 
 .search-btn {
@@ -15,4 +20,9 @@
   border: solid orange 1px;
   color: orange;
   background: #ffa50021;
+  &:hover {
+    border: solid #FF5722 1px;
+    color: #FF5722;
+    background: #ff572224;
+  }
 }
