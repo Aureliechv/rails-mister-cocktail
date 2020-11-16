@@ -8,9 +8,9 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
-    if @cocktail.save
+    if @dose.save
       redirect_to cocktail_path(@cocktail) if params[:commit] == 'All done 🍸'
-      redirect_to edit_cocktail_path(@cocktail) if params[:commit] == 'Add another ingedient'
+      redirect_to edit_cocktail_path(@cocktail) if params[:commit] == 'Add an ingredient'
     else
       render :new
     end

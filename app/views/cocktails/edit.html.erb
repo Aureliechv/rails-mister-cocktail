@@ -12,7 +12,7 @@
         <%= f.fields_for :doses, Dose.new do |dose_attributes|%>
           <%= dose_attributes.input :description %>
           <%= dose_attributes.association :ingredient, input_html: { class: 'select2' } %>
-          <%= f.submit 'Add another ingedient', onClick: "window.location.reload()", class: 'grey-btn' %>
+          <%= f.submit 'Add another ingedient', class: 'grey-btn' %>
       </div>
         <% end %>
       <div class="form-edit-footer">
