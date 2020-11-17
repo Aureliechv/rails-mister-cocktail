@@ -1,6 +1,4 @@
-<div class="space-banner"></div>
-
-<div id="home-banner" class="pink-banner">
+<div id="home-banner" class="orange-banner">
   <h1>Happy Hour</h1>
   <h3>Because it's always happy hour somewhere in the world,</h3>
   <h3>we believe that it's always the right time for a cocktail</h3>
@@ -13,11 +11,10 @@
     <% cocktails.each  do |cocktail| %>
       <div class="cocktail-card" style="background-image: linear-gradient(286deg,
       rgba(77,77,77,0.4472163865546218) 100%, rgba(77,77,77,0.4864320728291317) 100%),
-      url('<%= cl_image_path cocktail.photo.key %>')">
+       url('<%= cl_image_path cocktail.photo.key %>')">
         <%= link_to cocktail.name, cocktail_path(cocktail), class: 'cocktail-card-title' %>
       </div>
     <% end %>
     </div>
   <% end %>
 </div>
-
