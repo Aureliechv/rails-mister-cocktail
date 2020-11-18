@@ -24,17 +24,13 @@ class CocktailsController < ApplicationController
 
   def edit
     @cocktail = Cocktail.find(params[:id])
+    @dose = Dose.new
   end
 
   def update
     @cocktail = Cocktail.find(params[:id])
     if @cocktail.update(cocktail_params)
-      if params[:more_ingredient]
-        render :edit
-      elsif @cocktail.update(cocktail_params)
-        @cokctail.doses.last.delete if params[]
-        redirect_to cocktail_path(@cocktail)
-      end
+      redirect_to cocktail_path(@cocktail)
     else
       render :edit
     end

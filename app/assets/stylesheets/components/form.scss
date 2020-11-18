@@ -12,9 +12,12 @@
 .form-footer {
   text-align: center;
   margin: 10px;
-  .form-submit-btn {
-    width: 100%;
-  }
+}
+
+.form-submit-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
 }
 
 .form-element-container {

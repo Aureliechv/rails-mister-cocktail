@@ -3,24 +3,10 @@
   url('<%= cl_image_path @cocktail.photo.key %>')">
   </div>
   <div class="info-card-content">
-    <%= simple_form_for (@cocktail) do |f| %>
-      <div class="form-edit-header orange-banner">
+    <div class="header">
+      <%= simple_form_for (@cocktail) do |f| %>
         <h1><%= f.input :name, label: false %></h1>
-      </div>
-      <div class="form-edit-element-container">
-        <%= f.input :photo, as: :file %>
-        <%= f.fields_for :doses, Dose.new do |dose_attributes|%>
-          <%= dose_attributes.input :description %>
-          <%= dose_attributes.association :ingredient, input_html: { class: 'select2' } %>
-          <%= f.submit 'Add another ingedient', name: "more_ingredient", class: 'grey-btn' %>
-        <% end %>
-      </div>
-      <div class="form-edit-footer">
-        <%= f.submit 'All done 🍸' , name: "commit", value:"All done", class: 'orange-btn form-submit-btn' %>
-      </div>
-    <% end %>
-  </div>
-  <div class="info-card-content form-edit-ingredient">
+    </div>
     <div class="body">
       <div class="ingredients">
         <h2>Ingredients</h2>
@@ -30,6 +16,23 @@
           <br>
         <% end %>
       </div>
+      <%= f.submit 'All done 🍸' , class: 'orange-btn form-submit-btn' %>
+    <% end %>
+    <%= link_to "Back", cocktail_path(@cocktail), class: 'grey-btn form-submit-btn'%>
+    </div>
+  </div>
+  <div class="info-card-content form-edit-ingredient">
+    <div class="body">
+      <div class="ingredients">
+        <h2>Add an ingredient</h2>
+        <%= simple_form_for (@dose), url: cocktail_doses_path(@cocktail) do |f| %>
+          <%= f.input :description %>
+          <%= f.association :ingredient, input_html: { class: 'select2' } %>
+          <%= f.submit 'Add ingedient', name: "more_ingredient", class: 'form-submit-btn grey-btn' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+

@@ -10,10 +10,11 @@
       <div class="ingredients">
         <h2>Ingredients</h2>
         <% @cocktail.doses.each do |dose| %>
-          <p><%= dose.ingredient.name%> || <%= dose.description %></p>
+          <p><%= dose.ingredient.name%> || <%= dose.description %>&nbsp;&nbsp;&nbsp;</p>
         <% end %>
       </div>
       <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class: 'orange-btn' %>
+      <%= link_to "Back", cocktails_path, class: 'grey-btn form-submit-btn'%>
     </div>
   </div>
 </div>
