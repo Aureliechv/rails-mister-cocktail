@@ -44,11 +44,15 @@
     align-items: center;
     background: orange;
     text-align: center;
-    h1 {
-      color: white;
-      font-size: 60px;
-      font-family: 'Lobster', cursive;
-    }
+  }
+  h1 {
+    color: white;
+    font-size: 60px;
+    font-family: 'Lobster', cursive;
+  }
+  h2 {
+    font-size: 30px;
+    font-family: 'Lobster', cursive;
   }
   .body {
     height: 450px;

@@ -5,15 +5,15 @@
         <h1><%= f.input :name, label: false %></h1>
       </div>
       <div class="form-edit-element-container">
+        <h2>Add a photo</h2>
         <%= f.input :photo, as: :file %>
+        <h2>Add the first ingredient</h2>
         <%= f.fields_for :doses, Dose.new do |dose_attributes|%>
           <%= dose_attributes.input :description %>
           <%= dose_attributes.association :ingredient, input_html: { class: 'select2' } %>
-          <%= f.submit 'Add an ingedient', class: 'grey-btn' %>
         <% end %>
       </div>
       <div class="form-edit-footer">
-        <%= f.submit 'Add an ingedient', class: 'grey-btn' %>
         <%= f.submit 'All done 🍸' , class: 'orange-btn form-submit-btn' %>
       </div>
     <% end %>
