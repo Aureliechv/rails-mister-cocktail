@@ -4,5 +4,6 @@ class ResultsController < ApplicationController
     @params = params[:query]
     @cocktails = Cocktail.joins(doses: :ingredient)
                          .where('cocktails.name ILIKE ? OR ingredients.name ILIKE ?', @params, @params)
+                         .uniq
   end
 end

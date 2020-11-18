@@ -6,15 +6,13 @@
 </div>
 <div id="home-cards-container">
   <h2>Choose your poison</h2>
-  <% @cocktails.each_slice(4)  do |cocktails| %>
-    <div class="row">
-    <% cocktails.each  do |cocktail| %>
+  <div class="inline-cards">
+    <% @cocktails.each  do |cocktail| %>
       <div class="cocktail-card" style="background-image: linear-gradient(286deg,
       rgba(77,77,77,0.4472163865546218) 100%, rgba(77,77,77,0.4864320728291317) 100%),
        url('<%= cl_image_path cocktail.photo.key %>')">
         <%= link_to cocktail.name, cocktail_path(cocktail), class: 'cocktail-card-title' %>
       </div>
     <% end %>
-    </div>
-  <% end %>
+  </div>
 </div>
