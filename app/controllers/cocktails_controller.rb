@@ -9,11 +9,12 @@ class CocktailsController < ApplicationController
 
   def new
     @cocktail = Cocktail.new
+    @dose = Dose.new
   end
 
   def create
-    @cocktail = Cocktail.new(cocktail_params)
-    if @cocktail.save
+    @cocktail = Cocktail.new
+    if @cocktail.save(cocktail_params)
       redirect_to cocktail_path(@cocktail) if params[:commit] == 'All done 🍸'
       render :edit
     else
@@ -28,8 +29,12 @@ class CocktailsController < ApplicationController
   def update
     @cocktail = Cocktail.find(params[:id])
     if @cocktail.update(cocktail_params)
-      redirect_to cocktail_path(@cocktail) if params[:commit] == 'All done 🍸'
-      render :edit
+      if params[:more_ingredient]
+        render :edit
+      elsif @cocktail.update(cocktail_params)
+        @cokctail.doses.last.delete if params[]
+        redirect_to cocktail_path(@cocktail)
+      end
     else
       render :edit
     end
